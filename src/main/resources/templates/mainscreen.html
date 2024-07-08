@@ -8,10 +8,10 @@
 </head>
 <body>
 <div class="container">
-    <nav>
-        <a th:href="@{/about}" class="btn btn-secondary btn-sm mb-3">About</a>
-    </nav>
     <h1>Tech Haven</h1>
+    <nav>
+        <a th:href="@{/about}" class="btn btn-primary btn-sm mb-3">About</a>
+    </nav>
     <hr>
     <h2>Parts</h2>
     <form th:action="@{/mainscreen}">
@@ -35,45 +35,9 @@
         </thead>
         <tbody>
         <tr th:each="tempPart : ${parts}">
-            <td th:text="${tempPart.name}">CPU</td>
-            <td th:text="${tempPart.price}">200.00</td>
-            <td th:text="${tempPart.inv}">10</td>
-            <td>
-                <a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
-            </td>
-        </tr>
-        <tr th:each="tempPart : ${parts}">
-            <td th:text="${tempPart.name}">GPU</td>
-            <td th:text="${tempPart.price}">400.00</td>
-            <td th:text="${tempPart.inv}">15</td>
-            <td>
-                <a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
-            </td>
-        </tr>
-        <tr th:each="tempPart : ${parts}">
-            <td th:text="${tempPart.name}">RAM</td>
-            <td th:text="${tempPart.price}">80.00</td>
-            <td th:text="${tempPart.inv}">25</td>
-            <td>
-                <a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
-            </td>
-        </tr>
-        <tr th:each="tempPart : ${parts}">
-            <td th:text="${tempPart.name}">Motherboard</td>
-            <td th:text="${tempPart.price}">150.00</td>
-            <td th:text="${tempPart.inv}">12</td>
-            <td>
-                <a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
-            </td>
-        </tr>
-        <tr th:each="tempPart : ${parts}">
-            <td th:text="${tempPart.name}">Power Supply</td>
-            <td th:text="${tempPart.price}">100.00</td>
-            <td th:text="${tempPart.inv}">18</td>
+            <td th:text="${tempPart.name}">1</td>
+            <td th:text="${tempPart.price}">1</td>
+            <td th:text="${tempPart.inv}">1</td>
             <td>
                 <a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
@@ -107,45 +71,9 @@
         </thead>
         <tbody>
         <tr th:each="tempProduct : ${products}">
-            <td th:text="${tempProduct.name}">Gaming PC</td>
-            <td th:text="${tempProduct.price}">1200.00</td>
-            <td th:text="${tempProduct.inv}">5</td>
-            <td>
-                <a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
-            </td>
-        </tr>
-        <tr th:each="tempProduct : ${products}">
-            <td th:text="${tempProduct.name}">Workstation PC</td>
-            <td th:text="${tempProduct.price}">1500.00</td>
-            <td th:text="${tempProduct.inv}">3</td>
-            <td>
-                <a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
-            </td>
-        </tr>
-        <tr th:each="tempProduct : ${products}">
-            <td th:text="${tempProduct.name}">Budget PC</td>
-            <td th:text="${tempProduct.price}">800.00</td>
-            <td th:text="${tempProduct.inv}">10</td>
-            <td>
-                <a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
-            </td>
-        </tr>
-        <tr th:each="tempProduct : ${products}">
-            <td th:text="${tempProduct.name}">Office PC</td>
-            <td th:text="${tempProduct.price}">1000.00</td>
-            <td th:text="${tempProduct.inv}">7</td>
-            <td>
-                <a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
-            </td>
-        </tr>
-        <tr th:each="tempProduct : ${products}">
-            <td th:text="${tempProduct.name}">Developer PC</td>
-            <td th:text="${tempProduct.price}">1400.00</td>
-            <td th:text="${tempProduct.inv}">4</td>
+            <td th:text="${tempProduct.name}">1</td>
+            <td th:text="${tempProduct.price}">1</td>
+            <td th:text="${tempProduct.inv}">1</td>
             <td>
                 <a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3" onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
