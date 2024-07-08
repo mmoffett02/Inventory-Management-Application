@@ -10,3 +10,11 @@ This project is a customized Spring Framework application with an HTML front-end
 - **File**: README.md
 - **Date**: July 7, 2024
 - **Change**: Created the initial README file with placeholders for each part.
+
+
+
+### Part C: Customize User Interface
+- **Prompt**: Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
+- **File**: src/main/resources/templates/mainscreen.html
+- **Line Number**: Entire file
+- **Change**: Updated the main screen to include the shop name (Tech Haven), product names, and part names.
