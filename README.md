@@ -163,3 +163,48 @@ public class BootStrapData implements CommandLineRunner {
         partRepository.findAll().forEach(System.out::println);
     }
 }
+
+
+
+
+### Part F: Add a "Buy Now" Button to Product List
+
+**Prompt:**
+- The “Buy Now” button must be next to the buttons that update and delete products.
+- The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
+- Display a message that indicates the success or failure of a purchase.
+
+**Changes:**
+
+1. **File:** `src/main/resources/templates/mainscreen.html`
+   - **Lines:** 68-69
+   - **Change:** Added the "Buy Now" button next to the update and delete buttons for each product.
+     ```html
+     <a th:href="@{/buyNow(productID=${tempProduct.id})}" class="btn btn-success btn-sm mb-3">Buy Now</a>
+     ```
+
+2. **File:** `src/main/java/com/example/demo/controllers/MainScreenControllerr.java`
+   - **Lines:** Added method `buyNow`
+   - **Change:** Added logic to handle the "Buy Now" button click, decrement product inventory, and display success or failure messages.
+     ```java
+     @GetMapping("/buyNow")
+     public String buyNow(@RequestParam("productID") Long productID, RedirectAttributes redirectAttributes) {
+         Product product = productService.findById(Math.toIntExact(productID));
+         
+         if (product != null && product.getInv() > 0) {
+             product.setInv(product.getInv() - 1);
+             productService.save(product);
+             redirectAttributes.addFlashAttribute("message", product.getName() + " purchase successful!");
+         } else {
+             redirectAttributes.addFlashAttribute("message", "Purchase failed! " + product.getName() + " is out of stock.");
+         }
+     
+         return "redirect:/mainscreen";
+     }
+     ```
+
+3. **File:** `src/main/java/com/example/demo/service/ProductService.java`
+   - **Lines:** Updated `findById` method signature to use `Long` instead of `int`.
+
+4. **File:** `src/main/java/com/example/demo/service/ProductServiceImpl.java`
+   - **Lines:** Updated `findById` method implementation to use `Long` instead of `int`.

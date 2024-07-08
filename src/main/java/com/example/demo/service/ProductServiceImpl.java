@@ -21,7 +21,6 @@ public class ProductServiceImpl implements ProductService{
     private ProductRepository productRepository;
 
     @Autowired
-
     public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
@@ -33,17 +32,16 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public Product findById(int theId) {
-        Long theIdl=(long)theId;
+        Long theIdl = (long) theId;
         Optional<Product> result = productRepository.findById(theIdl);
 
         Product theProduct = null;
 
         if (result.isPresent()) {
             theProduct = result.get();
-        }
-        else {
+        } else {
             // we didn't find the product id
-            throw new RuntimeException("Did not find part id - " + theId);
+            throw new RuntimeException("Did not find product id - " + theId);
         }
 
         return theProduct;
@@ -52,16 +50,17 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public void save(Product theProduct) {
         productRepository.save(theProduct);
-
     }
 
     @Override
     public void deleteById(int theId) {
-        Long theIdl=(long)theId;
+        Long theIdl = (long) theId;
         productRepository.deleteById(theIdl);
     }
-    public List<Product> listAll(String keyword){
-        if(keyword !=null){
+
+    @Override
+    public List<Product> listAll(String keyword) {
+        if (keyword != null) {
             return productRepository.search(keyword);
         }
         return (List<Product>) productRepository.findAll();
