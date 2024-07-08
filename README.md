@@ -18,3 +18,19 @@ This project is a customized Spring Framework application with an HTML front-end
 - **File**: src/main/resources/templates/mainscreen.html
 - **Line Number**: Entire file
 - **Change**: Updated the main screen to include the shop name (Tech Haven), product names, and part names.
+
+
+
+### Part D: Add an About Page
+- **Prompt**: Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+- **File**: src/main/resources/templates/about.html
+- **Line Number**: Entire file
+- **Change**: Created an "About" page to describe Tech Haven and added a navigation link from the main screen to the "About" page.
+
+- **File**: src/main/resources/templates/mainscreen.html
+- **Line Number**: Added within the container div
+- **Change**: Added a navigation link to the "About" page.
+
+- **File**: src/main/java/com/example/demo/controllers/MainScreenControllerr.java
+- **Line Number**: Added `@GetMapping("/about")` method
+- **Change**: Created a method in the controller to handle the "About" page request.
