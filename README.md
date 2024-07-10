@@ -18,7 +18,8 @@ This project is a customized Spring Framework application with an HTML front-end
 - **File**: src/main/resources/templates/mainscreen.html
 - **Line Number**: Entire file
 - **Change**: Updated the main screen to include the shop name (Tech Haven), product names, and part names.
-
+### Date:
+- July 7, 2024
 
 
 ### Part D: Add an About Page
@@ -35,6 +36,8 @@ This project is a customized Spring Framework application with an HTML front-end
 - **Line Number**: Added `@GetMapping("/about")` method
 - **Change**: Created a method in the controller to handle the "About" page request.
 
+### Date:
+- July 7, 2024
 
 
 ## Part E: Adding Sample Inventory
@@ -163,7 +166,8 @@ public class BootStrapData implements CommandLineRunner {
         partRepository.findAll().forEach(System.out::println);
     }
 }
-
+### Date: 
+- July 8, 2024
 
 
 
@@ -209,6 +213,8 @@ public class BootStrapData implements CommandLineRunner {
 4. **File:** `src/main/java/com/example/demo/service/ProductServiceImpl.java`
    - **Lines:** Updated `findById` method implementation to use `Long` instead of `int`.
 
+### Date: 
+- July 9, 2024
 
 ## Changes for Part G
 
@@ -249,6 +255,8 @@ public class BootStrapData implements CommandLineRunner {
 ```sh
 git add README.md
 
+### Date: 
+- July 10, 2024
 
 
 
@@ -265,7 +273,8 @@ git add README.md
 - `src/main/java/com/example/demo/validators/EnufPartsValidator.java`
 - `src/main/resources/templates/InhousePartForm.html`
 - `src/main/resources/templates/OutsourcedPartForm.html`
-
+### Date: 
+- July 10, 2024
 
 
 
@@ -299,3 +308,20 @@ git add README.md
     - Ensure all tests pass and validate the new `minInv` and `maxInv` fields.
 - **Verify changes:**
     - Use your IDE's test runner or run `mvn test` in the terminal to execute the tests.
+
+### Date: 
+- July 10, 2024
+
+
+
+## Part J: Remove Unused Validators
+
+### Changes Made:
+- Removed the following unused validator class file:
+  - `com.example.demo.validators.DeletePartValidator`
+
+### Reason:
+- This validator had no usages in the project and was removed to clean up the codebase.
+
+### Date:
+- July 10, 2024
