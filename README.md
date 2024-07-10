@@ -265,3 +265,37 @@ git add README.md
 - `src/main/java/com/example/demo/validators/EnufPartsValidator.java`
 - `src/main/resources/templates/InhousePartForm.html`
 - `src/main/resources/templates/OutsourcedPartForm.html`
+
+
+
+
+## Part I: Unit Tests for Max and Min Inventory Fields
+
+### Changes:
+
+1. **File:** `src/test/java/com/example/demo/domain/PartTest.java`
+    - **Added unit tests for minimum inventory:**
+        - **Line:** 109
+        - **Description:** Added `testSetMinInventory()` to test the minimum inventory field.
+
+    - **Added unit tests for maximum inventory:**
+        - **Line:** 117
+        - **Description:** Added `testSetMaxInventory()` to test the maximum inventory field.
+
+### Description:
+
+- **Purpose:** Ensure the minimum and maximum inventory fields in `Part` entities are functioning as expected.
+- **Details:**
+    - **Minimum Inventory Test:**
+        - Sets the `minInv` field for both `InhousePart` and `OutsourcedPart`.
+        - Uses `assertEquals()` to verify that the `minInv` field was set correctly.
+    - **Maximum Inventory Test:**
+        - Sets the `maxInv` field for both `InhousePart` and `OutsourcedPart`.
+        - Uses `assertEquals()` to verify that the `maxInv` field was set correctly.
+
+### Testing:
+
+- **Run the tests:**
+    - Ensure all tests pass and validate the new `minInv` and `maxInv` fields.
+- **Verify changes:**
+    - Use your IDE's test runner or run `mvn test` in the terminal to execute the tests.
