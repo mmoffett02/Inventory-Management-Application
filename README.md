@@ -248,3 +248,20 @@ public class BootStrapData implements CommandLineRunner {
 1. Add the README file to the staging area:
 ```sh
 git add README.md
+
+
+
+
+## Part H: Add Validation for Inventory
+
+- Added validation to ensure that the inventory for parts is within the minimum and maximum bounds.
+- Updated `AddInhousePartController` and `AddOutsourcedPartController` to display error messages for inventory validation.
+- Added validation to check if updating a product would cause the part inventory to fall below the minimum.
+- Updated HTML templates (`InhousePartForm.html` and `OutsourcedPartForm.html`) to display error messages.
+
+### Updated Files:
+- `src/main/java/com/example/demo/controllers/AddInhousePartController.java`
+- `src/main/java/com/example/demo/controllers/AddOutsourcedPartController.java`
+- `src/main/java/com/example/demo/validators/EnufPartsValidator.java`
+- `src/main/resources/templates/InhousePartForm.html`
+- `src/main/resources/templates/OutsourcedPartForm.html`
