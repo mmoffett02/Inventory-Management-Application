@@ -1,14 +1,12 @@
 package com.example.demo.bootstrap;
 
 import com.example.demo.domain.InhousePart;
+import com.example.demo.domain.OutsourcedPart;
 import com.example.demo.domain.Product;
 import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
@@ -28,30 +26,11 @@ public class BootStrapData implements CommandLineRunner {
             System.out.println("Adding sample inventory...");
 
             // Create and add sample Inhouse parts
-            InhousePart cpu = new InhousePart();
-            cpu.setName("CPU");
-            cpu.setInv(10);
-            cpu.setPrice(299.99);
-
-            InhousePart gpu = new InhousePart();
-            gpu.setName("GPU");
-            gpu.setInv(5);
-            gpu.setPrice(499.99);
-
-            InhousePart ram = new InhousePart();
-            ram.setName("RAM");
-            ram.setInv(15);
-            ram.setPrice(99.99);
-
-            InhousePart motherboard = new InhousePart();
-            motherboard.setName("Motherboard");
-            motherboard.setInv(7);
-            motherboard.setPrice(199.99);
-
-            InhousePart powerSupply = new InhousePart();
-            powerSupply.setName("Power Supply");
-            powerSupply.setInv(10);
-            powerSupply.setPrice(79.99);
+            InhousePart cpu = new InhousePart("CPU", 299.99, 10, 50, 1, 123);
+            InhousePart gpu = new InhousePart("GPU", 499.99, 5, 30, 1, 456);
+            InhousePart ram = new InhousePart("RAM", 99.99, 15, 100, 1, 789);
+            InhousePart motherboard = new InhousePart("Motherboard", 199.99, 7, 20, 1, 101);
+            InhousePart powerSupply = new InhousePart("Power Supply", 79.99, 10, 40, 1, 102);
 
             partRepository.save(cpu);
             partRepository.save(gpu);

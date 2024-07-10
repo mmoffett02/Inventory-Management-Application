@@ -208,3 +208,43 @@ public class BootStrapData implements CommandLineRunner {
 
 4. **File:** `src/main/java/com/example/demo/service/ProductServiceImpl.java`
    - **Lines:** Updated `findById` method implementation to use `Long` instead of `int`.
+
+
+## Changes for Part G
+
+### Updated Files
+- `src/main/java/com/example/demo/bootstrap/BootStrapData.java`
+- `src/main/java/com/example/demo/controllers/AddInhousePartController.java`
+- `src/main/java/com/example/demo/controllers/AddOutsourcedPartController.java`
+- `src/main/java/com/example/demo/domain/InhousePart.java`
+- `src/main/java/com/example/demo/domain/OutsourcedPart.java`
+- `src/main/java/com/example/demo/domain/Part.java`
+- `src/main/java/com/example/demo/service/PartService.java`
+- `src/main/java/com/example/demo/service/PartServiceImpl.java`
+- `src/main/resources/templates/InhousePartForm.html`
+- `src/main/resources/templates/OutsourcedPartForm.html`
+- `src/main/resources/application.properties`
+- `src/test/java/com/example/demo/domain/InhousePartTest.java`
+- `src/test/java/com/example/demo/repositories/InhousePartRepositoryTest.java`
+- `src/test/java/com/example/demo/service/InhousePartServiceTest.java`
+
+### Summary of Changes
+1. **BootStrapData.java**: Added max and min inventory values to sample data and removed outsourced parts.
+2. **AddInhousePartController.java**: Added validation for max and min inventory fields.
+3. **AddOutsourcedPartController.java**: Added validation for max and min inventory fields.
+4. **InhousePart.java**: Added fields for max and min inventory and updated constructors.
+5. **OutsourcedPart.java**: Added fields for max and min inventory and updated constructors.
+6. **Part.java**: Added fields for max and min inventory and updated constructors.
+7. **PartService.java**: Added methods for handling max and min inventory.
+8. **PartServiceImpl.java**: Implemented methods for handling max and min inventory.
+9. **InhousePartForm.html**: Added input fields for max and min inventory.
+10. **OutsourcedPartForm.html**: Added input fields for max and min inventory.
+11. **application.properties**: Renamed database file.
+12. **InhousePartTest.java**: Added tests for max and min inventory.
+13. **InhousePartRepositoryTest.java**: Updated to match changes in InhousePart.
+14. **InhousePartServiceTest.java**: Updated to match changes in InhousePartService.
+
+### Commit and Push the README Update
+1. Add the README file to the staging area:
+```sh
+git add README.md
